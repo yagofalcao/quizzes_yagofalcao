@@ -7,7 +7,15 @@ Ex:
     15 -> False
 '''
 def prime(n):
-    return False
+    import math
+    primos = set(range(2,n+1))
+    for i in range(2, math.ceil(n**(1/2))):
+        if i in primos:
+            primos -= set(range(i,n+1, i)[1:])
+    if n in list(primos):
+        return True
+    else:
+        return False
 
 '''
 Questao 2: (2 pontos)
@@ -18,7 +26,17 @@ Ex:
     [15,15,15,15] -> [15]
 '''
 def unicos(L):
-    return L
+#lista vazia
+    l = []
+    
+#Para cada numero em L, se o i ainda não estiver em L, adiciona à vazia. Portanto, se já tiver sido incluída, não será novamente
+    for i in L:
+        if i not in l:
+            l.append(i)
+    l.sort()
+    return l
+    
+#Para cada numero em L, se o i ainda não estiver em L, adiciona à vazia. Portanto, se já tiver sido incluída, não será novamente
 
 '''
 Questao 3: (3 pontos)
@@ -33,7 +51,26 @@ Ex:
     (500, 30) -> False
 '''
 def amigavel(ab):
-    return False
+    x=ab[0]
+    y=ab[1]
+    contx=0
+    conty=0
+    tx=0
+    ty=0
+    for i in range(1,x+1):
+        if x%i==0:
+            contx+=i
+        if contx-x==y:
+            tx+=1
+    for i in range(1,y+1):
+        if y%i==0:
+            conty+=i
+        if conty-y==x:
+            ty+=1
+    if tx==ty:
+        return True
+    else:
+        return False
 
 '''
 Questao 4: (3 pontos)
@@ -44,4 +81,6 @@ Ex:
     [5,4,3,2,1] -> [1, 2, 3, 4, 5]
 '''
 def sort(L):
-    return L
+    L is list
+    Lsor = sorted(L,key=int,reverse=False)
+    return Lsor
