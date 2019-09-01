@@ -1,0 +1,65 @@
+Quiz: 1, Aluno: quizzes_yagofalcao, Notal final: 8.0/10.0
+   Questao: 1, Nota: 2.5/2.5
+      prime(11) = True
+         valor dado: True
+
+      prime(6) = False
+         valor dado: False
+
+      prime(3) = True
+         valor dado: True
+
+      prime(12) = False
+         valor dado: False
+
+      prime(17) = True
+         valor dado: True
+
+   Questao: 2, Nota: 2.5/2.5
+      unicos([205, 997, 2, 149]) = [205, 997, 2, 149]
+         valor dado: [2, 149, 205, 997]
+
+      unicos([1, 18, 4, 4, 0, 18]) = [1, 18, 4, 0]
+         valor dado: [0, 1, 4, 18]
+
+      unicos([67, 67, 67]) = [67]
+         valor dado: [67]
+
+      unicos([17, 5, 3, 5]) = [17, 5, 3]
+         valor dado: [3, 5, 17]
+
+      unicos([0]) = [0]
+         valor dado: [0]
+
+   Questao: 3, Nota: 0.5/2.5
+      amigavel((17296, 18416)) = True
+         valor dado: True
+
+      amigavel((1, 1)) = False
+         valor dado: True
+
+      amigavel((1523, 14342)) = False
+         valor dado: True
+
+      amigavel((220, 284)) = True
+         valor dado: True
+
+      amigavel((2, 3)) = False
+         valor dado: True
+
+   Questao: 4, Nota: 2.5/2.5
+      sort([56, 26, 12, 34, 49, 90, 81, 20, 17]) = [12, 17, 20, 26, 34, 49, 56, 81, 90]
+         valor dado: [12, 17, 20, 26, 34, 49, 56, 81, 90]
+
+      sort([4498, 1418, 976, 9083]) = [976, 1418, 4498, 9083]
+         valor dado: [976, 1418, 4498, 9083]
+
+      sort([-7762, -8326, -4114, -7814]) = [-8326, -7814, -7762, -4114]
+         valor dado: [-8326, -7814, -7762, -4114]
+
+      sort([0]) = [0]
+         valor dado: [0]
+
+      sort([1, 1, 1, 1, 1, 1]) = [1, 1, 1, 1, 1, 1]
+         valor dado: [1, 1, 1, 1, 1, 1]
+
