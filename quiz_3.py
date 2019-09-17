@@ -1,60 +1,82 @@
 import pandas as pd
 
-'''
-O arquivo "names2012.txt" no formato csv possui os seguintes dados:
-
-As colunas estao no formato : name,sex,births
-
-Sophia,F,22158
-Emma,F,20791
-Isabella,F,18931
-Olivia,F,17147
-...
-
-
-
-Na funcao near, dado o parametro inteiro num:
-
--- Crie um DataFrame a partir desse arquivo
-Ex
-
-name     sex  births 
-Sophia    F   22158  
-Emma      F   20791  
-Isabella  F   18931  
-
--- Crie a coluna 'mean by sex' com os valoes da média relativos à aquele 'sex'
-Ex:
-
-name     sex  births mean by sex
-Sophia    F   22158  89.970382
-Emma      F   20791  89.970382
-Isabella  F   18931  89.970382
-
--- Crie a coluna 'mean distance' com os valores da distancia entre o número de 'births' e o numero mean by 'sex'
-Ex:
-
-name     sex  births mean by   sex mean distance
-Sophia    F   22158  89.970382 22068.029618 
-Emma      F   20791  89.970382 20701.029618
-Isabella  F   18931  89.970382 18841.029618
-
--- Crie a coluna 'n distance' com os valores da distancia entre 'sex mean distance' e o parametro 'num'
-Ex: (para num = 10360)
-
-name     sex  births mean by   sex mean distance n distance
-Sophia    F   22158  89.970382 22068.029618      11708.029618
-Emma      F   20791  89.970382 20701.029618      10341.029618
-Isabella  F   18931  89.970382 18841.029618      8481.029618
-
---
-Retorne a tupla (min_male, min_female), onde 'min_male' é a pessoa de sex 'M' de menor 'n distance', 
-o mesmo para min_famele com o 'F'
-
-Ex:
-near(10360) = ('John', 'Elizabeth')
-
-'''
-
 def near(num):
-    return ('', '')
+    ###########################################################
+    #LER ARQUIVO
+    data = pd.read_csv('names2012.txt', sep=",", header=None)
+    data.columns = ["name", "sex", "births"]
+
+    ###########################################################
+    #MEDIA FEMININA
+    feminino = data[data['sex']=='F']
+    media_fem = feminino.mean()
+    fem = media_fem[0]
+
+    #MEDIA MASCULINA
+    masculino = data[data['sex']=='M']
+    media_masc = masculino.mean()
+    masc = media_masc[0]
+
+    ###########################################################
+    #COLUNA MEAN BY SEX
+    data['mean by sex']=0
+
+    #recoloquei valores da media
+    data['mean by sex'][0:len(feminino)-1]=fem
+    data['mean by sex'][len(feminino):]=masc
+
+    ###########################################################
+    #MEAN DISTANCCE    
+    data['sex mean distance'] = 0
+
+    for i in range(len(feminino)-1):
+        data['sex mean distance']=(data['births']-fem)
+
+    for i in range(len(data[len(feminino):])):
+        data['sex mean distance']=(data['births']-masc)
+
+    ###########################################################
+    #REDEFININDO OS VALORES PARA POSITIVOS    
+    #transformei os números em positivos
+    vetor = data['sex mean distance'].values
+    vetor2 = list(vetor)
+
+    
+    for i in list(range(len(data))):
+        if vetor2[i] < 0:
+            vetor2[i] = vetor2[i]*(-1)
+        i+=1
+        
+    #devolvi os números para o dataframe
+    data['sex mean distance']=vetor2
+
+    ###########################################################
+    #CALCULEI O MENOR VALOR
+    lista = []
+
+    data['answer']=0
+
+    for i in list(range(len(data))):
+        lista.append(data['sex mean distance'][i]-num)
+    i+=1
+
+    for i in list(range(len(data))):
+        if lista[i]<0:
+            lista[i]=lista[i]*(-1)
+        i+=1
+
+    data['answer']=lista
+
+    menor = data.sort_values('answer')
+    
+    ###########################################################
+    #COLOQUEI A RESPOSTA P/ HOMEM E MULHER
+    masculino1 = menor[menor['sex']=='M']
+    masc_lista = list(masculino1['name'])
+    answer_masc = masc_lista[0]
+
+    feminino1 = menor[menor['sex']=='F']
+    fem_lista = list(feminino1['name'])
+    answer_fem = fem_lista[0]
+
+    return(answer_masc, answer_fem)
