@@ -1,0 +1,68 @@
+Quiz: 2, Aluno: quizzes_yagofalcao, Notal final: 0.33/10.00
+   Questao: 1, Nota: 0.3333/3.3333333333333335
+      quantidade(15) = 2
+         valor dado: 0
+
+      quantidade(55) = 2
+         valor dado: 0
+
+      quantidade(1234567890) = 12345681
+         valor dado: 0
+
+      quantidade(0) = 0
+         valor dado: 0
+
+      quantidade(54) = 3
+         valor dado: 0
+
+   Questao: 2, Nota: 0.0000/3.3333333333333335
+      bola((3, 'azul')) = <solved.quiz_2.bola object at 0x116be7a10>
+         valor dado: ERROR
+
+      bola((0, 'azul')) = <solved.quiz_2.bola object at 0x1160e7b10>
+         valor dado: ERROR
+
+      bola((10, 'amarelo')) = <solved.quiz_2.bola object at 0x116be5c90>
+         valor dado: ERROR
+
+      bola((823, 'vermelho')) = <solved.quiz_2.bola object at 0x116be7950>
+         valor dado: ERROR
+
+      bola((1, 'vermelho')) = <solved.quiz_2.bola object at 0x116be78d0>
+         valor dado: ERROR
+
+   Questao: 3, Nota: 0.0000/3.3333333333333335
+      borda([[4 3 3 4]
+ [2 2 3 2]
+ [3 1 1 3]
+ [2 2 2 3]]) = 5.5
+         valor dado: 0
+
+      borda([[3 1 1 1 3]
+ [4 3 4 4 1]
+ [2 1 4 2 3]
+ [3 1 1 1 2]
+ [4 3 4 2 1]]) = 0.09895833333333333
+         valor dado: 0
+
+      borda([[2 2 4 2]
+ [3 1 1 1]
+ [3 2 3 4]
+ [1 4 4 4]
+ [3 1 4 3]]) = 0.3854166666666667
+         valor dado: 0
+
+      borda([[1 2 4 3 4]
+ [4 4 3 2 1]
+ [1 3 3 2 2]
+ [4 2 1 2 3]]) = 0.0787037037037037
+         valor dado: 0
+
+      borda([[4 2 3 2 2 3]
+ [1 1 2 4 2 4]
+ [2 1 2 4 2 2]
+ [4 4 1 2 1 3]
+ [4 4 2 2 4 1]
+ [1 1 3 2 3 1]]) = 0.0003662109375
+         valor dado: 0
+
