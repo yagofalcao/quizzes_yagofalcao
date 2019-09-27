@@ -1,0 +1,17 @@
+Quiz: 3, Aluno: quizzes_yagofalcao, Notal final: 0.00/10.00
+   Questao: 1, Nota: 0.0000/10
+      near(0) = ('Dereck', 'Abriana')
+         valor dado: ERROR
+
+      near(-500) = ('Dereck', 'Abriana')
+         valor dado: ERROR
+
+      near(500) = ('Kade', 'Kiley')
+         valor dado: ERROR
+
+      near(1000) = ('Emiliano', 'Kyleigh')
+         valor dado: ERROR
+
+      near(-1000) = ('Dereck', 'Abriana')
+         valor dado: ERROR
+
